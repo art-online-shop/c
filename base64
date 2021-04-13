@@ -8,3 +8,9 @@ string text_from = UTF8_my.GetString(my_bytes_from);    // прокидывае�
 
 
 return text_from;
+
+
+string str = project.Variables["text"].Value;
+return Convert.ToBase64String(Encoding.UTF8.GetBytes(str));
+
+project.Variables["var1"].Value
