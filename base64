@@ -1,0 +1,10 @@
+string text = "чего то для шифровки"; 
+Encoding  UTF8_my    = Encoding.UTF8;  // кодировка
+byte[] my_bytes = UTF8_my.GetBytes(text);   // прокидываем в байты
+string b64strcaptcha = Convert.ToBase64String( my_bytes ); // перевод байтов в Base64
+
+byte[] my_bytes_from = Convert.FromBase64String(b64strcaptcha);    // перевод Base64 в байты
+string text_from = UTF8_my.GetString(my_bytes_from);    // прокидываем в строку
+
+
+return text_from;
